@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERP.Views.LoginPage"
+             Title="LoginPage"
+             xmlns:local="clr-namespace:ERP.ViewModels"
+             x:DataType="local:LoginViewModel">
+
+
+    <ContentPage.BindingContext>
+        <!-- ViewModel'i buraya bağlıyoruz -->
+        <local:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image
+            Source="dotnet_bot.png"
+            HeightRequest="185"
+            Aspect="AspectFit"
+            SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Entry 
+            Placeholder="Username"    
+            Text="{Binding UserName}"
+            MaximumWidthRequest="300" />
+
+            <Entry 
+            Placeholder="Password" 
+            Text="{Binding Password}"
+            MaximumWidthRequest="300" />
+
+            <Label
+            Text="{Binding Info}"
+            x:Name="info"
+            FontSize="18"
+            HorizontalOptions="Center" />
+
+            <Button
+            Text="Login"
+            Command="{Binding ButtonClickCommand}"
+            HorizontalOptions="Center"
+            MinimumWidthRequest="100" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
