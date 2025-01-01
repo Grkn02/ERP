@@ -8,9 +8,13 @@
     Title="ERP">
 
     <!-- Aşşağıda ilk yazılan sayfa uygulama başlatılınca açılan sayfadır.yazdığınız pagei diğer shellcontentlerin yukarısında olacak şkilde ekle böylece ekranda görüntüleyebilirsiniz. -->
+    <ShellContent  Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}"/>
+
+    <ShellContent  Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
+    <ShellContent  Route="StockPage" ContentTemplate="{DataTemplate views:StockPage}"/>
+    <ShellContent  Route="StockEntryPage"  ContentTemplate="{DataTemplate views:StockEntryPage}"/>
+	<ShellContent  Route="TransactionHistoryPage" ContentTemplate="{DataTemplate views:TransactionHistoryPage}"/>
     
-    <ShellContent Title="Login Page" ContentTemplate="{DataTemplate views:LoginPage}"/>
-    <ShellContent Title="Menu" ContentTemplate="{DataTemplate views:MainPage}"/>
 
    
 

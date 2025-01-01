@@ -60,7 +60,7 @@ namespace ERP.ViewModels
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
 
         protected void OnPropertyChanged(string propertyName)
@@ -72,8 +72,14 @@ namespace ERP.ViewModels
         {
             if (_userName == "admin" && _password == "123456")
             {
-                Info = "Başarılı Giriş :)";
-                await Shell.Current.GoToAsync("MainPage");
+                
+                UserName = string.Empty;
+                Password = string.Empty;
+                Info = "";
+                await Shell.Current.GoToAsync("//MainPage"); // geri dönüş olmaması için // ekledik!!!
+
+
+
             } 
             else
                 Info = "Başarısız Giriş :(";
