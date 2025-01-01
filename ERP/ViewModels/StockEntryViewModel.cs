@@ -3,7 +3,6 @@ using ERP.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -11,18 +10,18 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
+using System.Xml.Linq;
 
 namespace ERP.ViewModels
 {
-    public class StockViewModel : INotifyPropertyChanged
+    public class StockEntryViewModel : INotifyPropertyChanged
     {
         private string _productCode;
         private string _name;
         private string _category;
         private int _quantity;
-        private decimal _price;
-        private string _customer;
+        private decimal _cost;
+        private string _suplier;
         private string _description;
 
         //ilgili viewin entry kısmındaki bind edilecek propertyler
@@ -46,15 +45,15 @@ namespace ERP.ViewModels
             get => _quantity;
             set => SetProperty(ref _quantity, value);
         }
-        public decimal Pricef
+        public decimal Costf
         {
-            get => _price;
-            set => SetProperty(ref _price, value);
+            get => _cost;
+            set => SetProperty(ref _cost, value);
         }
-        public string Customerf
+        public string Supplierf
         {
-            get => _customer;
-            set => SetProperty(ref _customer, value);
+            get => _suplier;
+            set => SetProperty(ref _suplier, value);
         }
         public string Descriptionf
         {
@@ -66,72 +65,34 @@ namespace ERP.ViewModels
         public ICommand ButtonClickCommand { get; }
 
         public IProductTransactionService ProductTransactionservice { get; set; }
-        public IProductService Productservice { get; set; } 
-        private ObservableCollection<Product> _products =  new ObservableCollection<Product>();
-        public ObservableCollection<Product> Products // view Tablosunda bind edilecek property
-        {
-            get => _products;
-            set
-            {
-                if (_products != value)
-                {
-                    _products = value;
-                    OnPropertyChanged(nameof(Products)); // Property değiştiğinde bildiriliyor
-                }
-            }
-        }
+        public IProductService Productservice { get; set; }
 
-       
-        public StockViewModel(IProductService Productservice, IProductTransactionService ProductTransactionservice) // DI kullanımı
+
+        public StockEntryViewModel(IProductService Productservice, IProductTransactionService ProductTransactionservice) // DI kullanımı
         {
             this.Productservice = Productservice;
             this.ProductTransactionservice = ProductTransactionservice;
-          
-            Task.Run(async () => await LoadProductsAsync()); // ilk açılırken tabloya DB den verilerin yüklenmesi .
+
+            
 
             ButtonClickCommand = new Command(OnButtonClick);
 
         }
 
-   
-
-        public async Task LoadProductsAsync() // veritabaından çekme ve viewe gösterme
-        {
-            try
-            {
-                // Veritabanı veya dış servisten ürünleri almak
-                var products = await Productservice.GetAllProductsAsync();
-                
-                Products = new ObservableCollection<Product>(products); // Yeni koleksiyon oluştur ve ata
-                Products.Clear(); // Eski verileri temizle
-                foreach (var product in products)
-                {
-                    Products.Add(product);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                // Hata işleme
-                Debug.WriteLine($"Error fetching products: {ex.Message}");
-            }
-        }
 
         private async void OnButtonClick()
         {
 
             await AddProductValuesAsync();
             await AddTransactionValuesAsync();
-            await LoadProductsAsync();
-
+            
             ProductCodef = string.Empty;
             Categoryf = string.Empty;
             Namef = string.Empty;
             Quantityf = 0;
-            Pricef = 0;
-            Customerf = string.Empty;
+            Costf = 0;
+            Supplierf = string.Empty;
             Descriptionf = string.Empty;
-
 
 
 
@@ -139,7 +100,7 @@ namespace ERP.ViewModels
 
         public async Task AddTransactionValuesAsync() // kullanıcı girdiği entryler DB ye işleme amaçlı çalışan method
         {
-            var product =  await Productservice.GetProductByProductCodeAsync(ProductCodef);
+            var product = await Productservice.GetProductByProductCodeAsync(ProductCodef);
 
             if (product == null)
             {
@@ -153,12 +114,12 @@ namespace ERP.ViewModels
                     ProductId = product.Id, // foreign key değer ataması şart
                     TransactionType = "Exit",
                     Quantity = Quantityf,
-                    TransactionPrice = Pricef,
-                    PartyName = Customerf,
-                    Description = Descriptionf  
+                    TransactionPrice = Costf,
+                    PartyName = Supplierf,
+                    Description = Descriptionf
                 };
 
-               await ProductTransactionservice.AddProductTransactionAsync(productTransaction); // yapılan işlemin transaction bilgileri DB ye kaydederiz
+                await ProductTransactionservice.AddProductTransactionAsync(productTransaction); // yapılan işlemin transaction bilgileri DB ye kaydederiz
 
             }
 
@@ -176,16 +137,16 @@ namespace ERP.ViewModels
             }
             else
             {
-                
-                await Productservice.UpdateProductAsync(product.Id,Quantityf,Pricef,false);   // falsw atması yaptık çünkü cost değeri güncelliyoruz
-               
+
+                await Productservice.UpdateProductAsync(product.Id, Quantityf, Costf, true);   // true atması yaptık çünkü cost değeri güncelliyoruz
+
 
             }
 
 
 
         }
-        
+
 
 
         protected void OnPropertyChanged(string propertyName)
@@ -193,7 +154,7 @@ namespace ERP.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null) 
+        protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(field, value))
                 return false;
@@ -202,8 +163,6 @@ namespace ERP.ViewModels
             OnPropertyChanged(propertyName);
             return true;
         }
-
-
 
     }
 }

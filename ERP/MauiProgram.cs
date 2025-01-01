@@ -27,6 +27,8 @@ namespace ERP
             builder.Services.AddTransient<Views.StockPage>();
             builder.Services.AddTransient<ViewModels.TransactionHistoryViewModel>();
             builder.Services.AddTransient<Views.TransactionHistoryPage>();
+            builder.Services.AddTransient<ViewModels.StockEntryViewModel>();
+            builder.Services.AddTransient<Views.StockEntryPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -3,6 +3,89 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.StockEntryPage"
              Title="Depo Giriş">
+  
+    <StackLayout Padding="15">
+
+        <Label Text="Ürün Girme" 
+               FontSize="20" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,10" />
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+              ColumnDefinitions="Auto,*">
+
+            <Label Text="Ürün Kodu:" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry1"  
+                   Text="{Binding ProductCodef}" 
+                   Grid.Row="0" 
+                   Grid.Column="1" />
+
+            <Label Text="Ürün Kategorisi:" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry2" 
+                   Text="{Binding Namef}" 
+                   Grid.Row="1" 
+                   Grid.Column="1" />
+
+            <Label Text="Ürün Adı:" 
+                   Grid.Row="2" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry3" 
+                   Text="{Binding Categoryf}" 
+                   Grid.Row="2" 
+                   Grid.Column="1" />
+
+            <Label Text="Miktar (Adet):" 
+                   Grid.Row="3" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry4" 
+                   Text="{Binding Quantityf}" 
+                   Grid.Row="3" 
+                   Grid.Column="1" />
+
+            <Label Text="Birim Alış Fiyatı:" 
+                   Grid.Row="4" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry5" 
+                   Text="{Binding Costf}" 
+                   Grid.Row="4" 
+                   Grid.Column="1" />
+
+            <Label Text="Satıcı:" 
+                   Grid.Row="5" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry6" 
+                   Text="{Binding Supplierf}" 
+                   Grid.Row="5" 
+                   Grid.Column="1" />
+
+            <Label Text="Açıklama (Opsiyonel):" 
+                   Grid.Row="6" 
+                   Grid.Column="0" 
+                   VerticalTextAlignment="Center" />
+            <Entry x:Name="Entry7" 
+                   Text="{Binding Descriptionf}" 
+                   Grid.Row="6" 
+                   Grid.Column="1" />
+
+        </Grid>
+
+        <Button Text="Gönder" 
+                Command="{Binding ButtonClickCommand}" 
+                HorizontalOptions="Center" 
+                VerticalOptions="End" 
+                Margin="0,20,0,0" />
+
+    </StackLayout>
     
     
 </ContentPage>
