@@ -33,7 +33,7 @@
                 <material:TextField Title="Mevcut Stok" TitleColor="DarkBlue" TextColor="Black" />
                 <material:TextField Title="Birim Maliyet" TitleColor="DarkBlue" TextColor="Black" />
                 <material:TextField Title="Birim Fiyat" TitleColor="DarkBlue" TextColor="Black" />
-                <Button Text="Ürün Kodu Ekle" BackgroundColor="DarkGreen" />
+                <Button Text="Ürün Kodu Ekle" TextColor="White" BackgroundColor="DarkGreen" />
             </StackLayout>
         </Frame>
 
@@ -53,7 +53,7 @@
                 <material:TextField Title="Mevcut Stok" TitleColor="DarkBlue" TextColor="Black" />
                 <material:TextField Title="Birim Maliyet" TitleColor="DarkBlue" TextColor="Black" />
                 <material:TextField Title="Birim Fiyat" TitleColor="DarkBlue" TextColor="Black" />
-                <Button Text="Ürün Güncelle" BackgroundColor="Brown"/>
+                <Button Text="Ürün Güncelle" TextColor="White" BackgroundColor="Brown"/>
             </StackLayout>
         </Frame>
 
@@ -80,6 +80,7 @@
 
                 <Button 
                     Text="Ürün Sil" 
+                    TextColor="White"
                     Grid.Row="1" 
                     BackgroundColor="DarkRed"
                     VerticalOptions="EndAndExpand" />

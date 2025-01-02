@@ -94,7 +94,7 @@
 
                 <material:TextField x:Name="Entry7" Text="{Binding Descriptionf}" Title="Açıklama (Opsiyonel)" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="6" Grid.Column="0"/>
             </Grid>
-            <Button Text="Gönder" Command="{Binding ButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,1,0,0" BackgroundColor="DarkBlue"/>
+            <Button Text="Gönder" TextColor="White" Command="{Binding ButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,1,0,0" BackgroundColor="DarkBlue"/>
             <Label Text="{Binding Info}" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,5" BackgroundColor="Transparent" TextColor="Black" />
         </StackLayout>
     </Grid>

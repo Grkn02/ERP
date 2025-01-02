@@ -74,11 +74,13 @@
                 IsPassword="True" />
 
             <!-- Kısayol mesajı -->
-            <Label
+            <Label 
+                Margin="11"
                 Text="Kayıtlı değil misin? Buradan Kayıt Ol!"
                 TextColor="Blue"
                 FontAttributes="Bold"
                 HorizontalOptions="Center">
+               
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RouteRegisterCommand}" />
                 </Label.GestureRecognizers>
