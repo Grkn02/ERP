@@ -1,5 +1,4 @@
-﻿using ERP.Models;
-using ERP.Services;
+﻿using ERP.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ using System.Windows.Input;
 
 namespace ERP.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class RegisterViewModel : INotifyPropertyChanged
     {
         public IUserService Userservice { get; set; }
         public ICommand ButtonClickCommand { get; }
@@ -58,12 +57,11 @@ namespace ERP.ViewModels
             }
         }
 
-        public LoginViewModel(IUserService Userservice)
+        public RegisterViewModel(IUserService Userservice)
         {
             this.Userservice = Userservice;
             ButtonClickCommand = new Command(OnButtonClick); // Command'e bir metod bağlanıyor
-            RouteRegisterCommand = new Command(OnRegisterClick); // Command'e bir metod bağlanıyor
-
+            
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -76,39 +74,35 @@ namespace ERP.ViewModels
 
         private async void OnButtonClick()
         {
-
-            User user  = await Userservice.GetUserByUsernameAsync(UserName);
-           
-            if (user != null) // kullanıcı adı eşleştiyse
+            if(string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
             {
-               bool isYou =  PasswordManager.VerifyPassword(Password, user.PasswordHash);
-                if (isYou) // şifre de doğruysa
-                {
-                    UserName = string.Empty;
-                    Password = string.Empty;
-                    Info = string.Empty;
-                    await Shell.Current.GoToAsync("//MainPage"); // geri dönüş olmaması için "//" ekledik!!!
-
-                }
-                else Info = "Başarısız Giriş :(";
+                Info = "Kullanıcı adı ve şifre boş olamaz";
             }
-            else Info = "Başarısız Giriş :(";
-
-        }
-
-        private async void OnRegisterClick()
-        {
-            UserName = string.Empty;
-            Password = string.Empty;
-            Info = string.Empty;
-            await Shell.Current.GoToAsync("RegisterPage");
            
+           else
+            {
+                var user = await Userservice.GetUserByUsernameAsync(UserName);
+                if (user != null)
+                {
+                    Info = "Kullanıcı adı zaten kullanımda";
+                }
+                else
+                {
+                    var hashedpassword= PasswordManager.HashPassword(Password); // şifreyi hashleyip öyle veritabanına ekliyoruz
+                    await Userservice.AddUserAsync(UserName, hashedpassword);
+                    Info = "Kullanıcı başarıyla eklendi! Giriş sayfasına dönebilirsiniz";
+                }
+
+            } 
+            
+
 
         }
+
+        
 
 
 
     }
-
-
 }
+

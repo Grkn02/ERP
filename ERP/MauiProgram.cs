@@ -23,12 +23,18 @@ namespace ERP
             builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("TestingDb")); // veritabanı bağlantısı için servis eklenmesi test veritabanı eklendi
             builder.Services.AddScoped<IProductService, ProductService>(); // interface servis le implementi olan class servisi DI yapılarak ekleniyor
             builder.Services.AddScoped<IProductTransactionService, ProductTransactionService>(); // her http isteği için yeni nesne oluşturur scope ile.BU veritbanı işlemleri için gerekli
+            builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.AddTransient<ViewModels.LoginViewModel>();
+            builder.Services.AddTransient<Views.LoginPage>();
             builder.Services.AddTransient<ViewModels.StockViewModel>();
             builder.Services.AddTransient<Views.StockPage>();
             builder.Services.AddTransient<ViewModels.TransactionHistoryViewModel>();
             builder.Services.AddTransient<Views.TransactionHistoryPage>();
             builder.Services.AddTransient<ViewModels.StockEntryViewModel>();
             builder.Services.AddTransient<Views.StockEntryPage>();
+            builder.Services.AddTransient<ViewModels.RegisterViewModel>();
+            builder.Services.AddTransient<Views.RegisterPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -21,8 +21,8 @@ namespace ERP.ViewModels
         private string _category;
         private int _quantity;
         private decimal _cost;
-        private string _suplier;
-        private string _description;
+        private string _suplier = string.Empty; 
+        private string _description = string.Empty;
 
         //ilgili viewin entry kısmındaki bind edilecek propertyler
         public string ProductCodef
@@ -83,17 +83,24 @@ namespace ERP.ViewModels
         private async void OnButtonClick()
         {
 
-            await AddProductValuesAsync();
-            await AddTransactionValuesAsync();
-            
-            ProductCodef = string.Empty;
-            Categoryf = string.Empty;
-            Namef = string.Empty;
-            Quantityf = 0;
-            Costf = 0;
-            Supplierf = string.Empty;
-            Descriptionf = string.Empty;
+            if(ProductCodef == null)
+            {
 
+            }
+            else 
+            {
+                await AddProductValuesAsync();
+                await AddTransactionValuesAsync();
+
+                ProductCodef = string.Empty;
+                Categoryf = string.Empty;
+                Namef = string.Empty;
+                Quantityf = 0;
+                Costf = 0;
+                Supplierf = string.Empty;
+                Descriptionf = string.Empty;
+
+            }
 
 
         }

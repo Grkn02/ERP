@@ -14,9 +14,10 @@ namespace ERP
             Routing.RegisterRoute("StockPage", typeof(StockPage));
             Routing.RegisterRoute("StockEntryPage", typeof(StockEntryPage));
             Routing.RegisterRoute("TransactionHistoryPage", typeof(TransactionHistoryPage));
-          
+            Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
 
-           
+
+
         }
 
         

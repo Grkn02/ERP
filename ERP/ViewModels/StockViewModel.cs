@@ -22,8 +22,8 @@ namespace ERP.ViewModels
         private string _category;
         private int _quantity;
         private decimal _price;
-        private string _customer;
-        private string _description;
+        private string _customer = string.Empty;
+        private string _description = string.Empty;
 
         //ilgili viewin entry kısmındaki bind edilecek propertyler
         public string ProductCodef
@@ -90,6 +90,14 @@ namespace ERP.ViewModels
             Task.Run(async () => await LoadProductsAsync()); // ilk açılırken tabloya DB den verilerin yüklenmesi .
 
             ButtonClickCommand = new Command(OnButtonClick);
+            
+            ProductCodef = string.Empty;
+            Categoryf = string.Empty;
+            Namef = string.Empty;
+            Quantityf = 0;
+            Pricef = 0;
+            Customerf = string.Empty;
+            Descriptionf = string.Empty;
 
         }
 

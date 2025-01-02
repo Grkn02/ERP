@@ -14,6 +14,7 @@
     <ShellContent  Route="StockPage" ContentTemplate="{DataTemplate views:StockPage}"/>
     <ShellContent  Route="StockEntryPage"  ContentTemplate="{DataTemplate views:StockEntryPage}"/>
 	<ShellContent  Route="TransactionHistoryPage" ContentTemplate="{DataTemplate views:TransactionHistoryPage}"/>
+    <ShellContent  Route="RegisterPage" ContentTemplate="{DataTemplate views:RegisterPage}"/>
     
 
    

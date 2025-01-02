@@ -21,8 +21,8 @@ namespace ERP.Services
 
         public async Task AddProductTransactionAsync(ProductTransaction productTransaction)
         {
-            _context.ProductTransactions.Add(productTransaction);
-            _context.SaveChanges();
+           _context.ProductTransactions.Add(productTransaction);
+           _context.SaveChanges();
         }
 
         public async Task<List<TransactionHistoryDTO>> GetProductTransactionHistory()

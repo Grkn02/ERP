@@ -3,44 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.LoginPage"
              Title="Giriş Ekranı" 
-             xmlns:local="clr-namespace:ERP.ViewModels"
-             x:DataType="local:LoginViewModel">
+             xmlns:local="clr-namespace:ERP.ViewModels">
 
-
-    <ContentPage.BindingContext>
-        <!-- ViewModel'i buraya bağlıyoruz -->
-        <local:LoginViewModel />
-    </ContentPage.BindingContext>
-
-    <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Image
+    <VerticalStackLayout Padding="30,0" Spacing="25">
+        <Image
             Source="dotnet_bot.png"
             HeightRequest="185"
-            Aspect="AspectFit"
-            SemanticProperties.Description="dot net bot in a race car number eight" />
+            Aspect="AspectFit" />
 
-            <Entry 
+        <Entry 
             Placeholder="Username"    
             Text="{Binding UserName}"
             MaximumWidthRequest="300" />
 
-            <Entry 
+        <Entry 
             Placeholder="Password" 
             Text="{Binding Password}"
             MaximumWidthRequest="300" />
 
-            <Label
+        <Label
+            Text="Kayıtlı değil misin? Burdan Kayıt Ol! "
+            TextColor="Blue"
+            FontAttributes="Bold" 
+            HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RouteRegisterCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
             Text="{Binding Info}"
             x:Name="info"
             FontSize="18"
             HorizontalOptions="Center" />
 
-            <Button
-            Text="Login"
+        <Button
+            Text="Giriş"
             Command="{Binding ButtonClickCommand}"
             HorizontalOptions="Center"
             MinimumWidthRequest="100" />
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
+
+
+
+
+
+
+
+
+
+
 </ContentPage>

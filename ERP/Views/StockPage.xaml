@@ -80,25 +80,25 @@
             <Label Text="Ürün Çıkarma" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10"/>
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
                 <Label Text="Ürün Kodu:" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry1"  Text="{Binding ProductCodef, Mode=OneWayToSource}" Grid.Row="0" Grid.Column="1"/>
+                <Entry x:Name="Entry1"  Text="{Binding ProductCodef}" Grid.Row="0" Grid.Column="1"/>
 
                 <Label Text="Ürün Kategorisi:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry2" Text="{Binding Namef, Mode=OneWayToSource}" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="Entry2" Text="{Binding Namef}" Grid.Row="1" Grid.Column="1"/>
 
                 <Label Text="Ürün Adı:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry3" Text="{Binding Categoryf, Mode=OneWayToSource}" Grid.Row="2" Grid.Column="1"/>
+                <Entry x:Name="Entry3" Text="{Binding Categoryf}" Grid.Row="2" Grid.Column="1"/>
 
                 <Label Text="Miktar(Adet):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry4" Text="{Binding Quantityf, Mode=OneWayToSource}" Grid.Row="3" Grid.Column="1"/>
+                <Entry x:Name="Entry4" Text="{Binding Quantityf}" Grid.Row="3" Grid.Column="1"/>
 
                 <Label Text="Birim Satış Fiyatı:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry5" Text="{Binding Pricef, Mode=OneWayToSource}" Grid.Row="4" Grid.Column="1"/>
+                <Entry x:Name="Entry5" Text="{Binding Pricef}" Grid.Row="4" Grid.Column="1"/>
 
                 <Label Text="Müşteri:" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry6" Text="{Binding Customerf, Mode=OneWayToSource}" Grid.Row="5" Grid.Column="1"/>
+                <Entry x:Name="Entry6" Text="{Binding Customerf}" Grid.Row="5" Grid.Column="1"/>
 
                 <Label Text="Açıklama(Opsiyonel):" Grid.Row="6" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry7" Text="{Binding Descriptionf, Mode=OneWayToSource}" Grid.Row="6" Grid.Column="1"/>
+                <Entry x:Name="Entry7" Text="{Binding Descriptionf}" Grid.Row="6" Grid.Column="1"/>
 
             </Grid>
             <Button Text="Gönder" Command="{Binding ButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,1,0,0"/>
