@@ -6,7 +6,7 @@ namespace ERP.Services
     {
         public Task<List<Product>> GetAllProductsAsync();
         public Task<Product> GetProductByProductCodeAsync(string productCode);
-        //Task AddProductAsync(Product product);
+        Task AddProductAsync(Product newproduct);
         public Task UpdateProductAsync(int Id, int stockChange, decimal costOrPrice, bool iscost);
         //Task DeleteProductAsync(int id);
        

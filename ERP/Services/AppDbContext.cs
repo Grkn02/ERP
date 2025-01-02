@@ -44,7 +44,7 @@ namespace ERP.Services
                     new ProductTransaction { ProductId = 2, TransactionType = "Entry", Quantity = 100, TransactionPrice = 12, PartyName = "Supplier B", TransactionDate = DateTime.Now.AddDays(-1), Description = "Re-stock after sales" }
                 );
                 context.Users.AddRange(
-                    new User { Id = 1, Username = "admin", PasswordHash = "vFLgZTeANpEiamS1OZIdwyb5lim2qfUZ6ey+b1b6xtQ=:SuWyHKqaFrKNudLvQBzK9e3w2JzEXcM/Oryj6Jg5WPc=", CreatedAt = DateTime.Now.AddDays(-10) }   
+                    new User { Id = 1, Username = "admin", PasswordHash = "vFLgZTeANpEiamS1OZIdwyb5lim2qfUZ6ey+b1b6xtQ=:SuWyHKqaFrKNudLvQBzK9e3w2JzEXcM/Oryj6Jg5WPc=", Name = "Babişko", Surname = "Faruk", Email = "babisko@gmail.com", CreatedAt = DateTime.Now.AddDays(-10) }   
                 );
 
                 // şifre = 123456 için hashlenmiş hali =  "vFLgZTeANpEiamS1OZIdwyb5lim2qfUZ6ey+b1b6xtQ=:SuWyHKqaFrKNudLvQBzK9e3w2JzEXcM/Oryj6Jg5WPc="

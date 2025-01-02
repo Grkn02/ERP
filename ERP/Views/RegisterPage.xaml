@@ -20,6 +20,21 @@
         Text="{Binding Password}"
         MaximumWidthRequest="300" />
 
+        <Entry 
+        Placeholder="Email" 
+        Text="{Binding Email}"
+        MaximumWidthRequest="300" />
+
+        <Entry 
+        Placeholder="Name" 
+        Text="{Binding Name}"
+        MaximumWidthRequest="300" />
+
+        <Entry 
+        Placeholder="Surname" 
+        Text="{Binding Surname}"
+        MaximumWidthRequest="300" />
+
         <Label
         Text="{Binding Info}"
         x:Name="info"

@@ -8,6 +8,7 @@
     Title="ERP">
 
     <!-- Aşşağıda ilk yazılan sayfa uygulama başlatılınca açılan sayfadır.yazdığınız pagei diğer shellcontentlerin yukarısında olacak şkilde ekle böylece ekranda görüntüleyebilirsiniz. -->
+    <ShellContent  Route="ManageProductPage" ContentTemplate="{DataTemplate views:ManageProductPage}"/>
     <ShellContent  Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}"/>
 
     <ShellContent  Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>

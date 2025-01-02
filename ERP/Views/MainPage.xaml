@@ -3,12 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.MainPage"
              Title="Ana Sayfa"
-             xmlns:local="clr-namespace:ERP.ViewModels"
-             x:DataType="local:MainViewModel">
+             xmlns:local="clr-namespace:ERP.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:MainViewModel />
-    </ContentPage.BindingContext>
+
+
 
     <Grid>
         <!-- Grid Yapısı -->
@@ -73,7 +71,7 @@
         <!-- Sağ İçerik Alanı -->
         <ContentView Grid.Column="1"
                      BackgroundColor="White">
-            <Label Text="Hoşgeldiniz!"
+            <Label Text="{Binding WelcomeMessage}"
                    FontSize="24"
                    HorizontalOptions="Center"
                    VerticalOptions="Center" />

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERP.Views.ManageProductPage"
+             Title="ManageProductPage">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+            <!-- Forum 1 -->
+            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
+                <Entry Placeholder="Ürün Kodu" />
+                <Entry Placeholder="Ürün Adı" />
+                <Entry Placeholder="Kategori" />
+                <Entry Placeholder="Mevcut Stok" />
+                <Entry Placeholder="Birim Maliyet" />
+                <Entry Placeholder="Birim Fiyat" />
+                <Button Text="Ürün Ekle" />
+            </StackLayout>
+
+            <!-- Forum 2 -->
+            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
+                <Entry Placeholder="Güncellenecek Ürünün Kodu" />
+                <Entry Placeholder="Ürün Adı" />
+                <Entry Placeholder="Kategori" />
+                <Entry Placeholder="Mevcut Stok" />
+                <Entry Placeholder="Birim Maliyet" />
+                <Entry Placeholder="Birim Fiyat" />
+                <Button Text="Ürün Güncelle" />
+            </StackLayout>
+
+            <!-- Forum 3 -->
+            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
+                <Entry Placeholder="Silinecek Ürün Kodu" />
+                <Button Text="Ürün Sil" />
+            </StackLayout>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+
+
+
+
+
+</ContentPage>

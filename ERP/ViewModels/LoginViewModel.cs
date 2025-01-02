@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace ERP.ViewModels
 {
@@ -87,7 +88,13 @@ namespace ERP.ViewModels
                     UserName = string.Empty;
                     Password = string.Empty;
                     Info = string.Empty;
+
+                    var name = user.Name;
+                    var surname = user.Surname;
+
                     await Shell.Current.GoToAsync("//MainPage"); // geri dönüş olmaması için "//" ekledik!!!
+                    await Shell.Current.GoToAsync($"//MainPage?Name={Uri.EscapeDataString(name)}&Surname={Uri.EscapeDataString(surname)}");
+
 
                 }
                 else Info = "Başarısız Giriş :(";

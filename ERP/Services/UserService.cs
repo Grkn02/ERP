@@ -25,14 +25,8 @@ namespace ERP.Services
 
         }
 
-        public async Task AddUserAsync(string username, string hashedpassword)
+        public async Task AddUserAsync(User user)
         {
-            User user = new User()
-            {
-                Username = username,
-                PasswordHash = hashedpassword
-            };
-           
             _context.Users.Add(user);
             _context.SaveChanges();
 

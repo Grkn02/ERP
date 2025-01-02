@@ -60,6 +60,12 @@ namespace ERP.Services
           
         }
 
+        public async Task AddProductAsync(Product newproduct)
+        {
+
+
+        } 
+
         //// Ürün ID ile getirme
         //public async Task<Product> GetProductByIdAsync(int id)
         //{

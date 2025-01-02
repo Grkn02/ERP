@@ -10,7 +10,7 @@ namespace ERP.Services
     public interface IUserService
     {
         public Task<User> GetUserByUsernameAsync(string username);
-        public Task AddUserAsync(string username, string hashedpassword);
+        public Task AddUserAsync(User user);
 
     }   
 }

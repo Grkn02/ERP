@@ -76,11 +76,7 @@ namespace ERP.ViewModels
 
         private async void OnButtonClick()
         {
-
-        
-
-
-
+            await LoadTransactionHistoriesAsync();
 
         }
 
