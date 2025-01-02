@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+             x:Class="Proje2.DashboardPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sol Menü -->
+        <StackLayout Grid.Column="0" Spacing="20" BackgroundColor="DarkBlue" Padding="10">
+            <Label Text="
+  ★  E R Ü S O F T  ★
+─────────────────────
+         " TextColor="Black" HeightRequest="50" BackgroundColor="White" HorizontalOptions="Center" />
+            <Button Text="Finance" ImageSource="money.png" TextColor="Black" Clicked="OnFinanceClicked" HorizontalOptions="Start" BackgroundColor="Transparent" WidthRequest="175"/>
+            <Button Text="Warehouse" ImageSource="warehouse.png" TextColor="Black" HorizontalOptions="Start" BackgroundColor="Transparent" Clicked="OnDepoClicked" WidthRequest="175" />
+            <Button Text="Warehouse IO" ImageSource="fifo.png" TextColor="Black" HorizontalOptions="Start" BackgroundColor="Transparent" WidthRequest="186" />
+            <Button Text="Employees" ImageSource="employee.png" TextColor="Black" HorizontalOptions="Start" BackgroundColor="Transparent" WidthRequest="175" />
+        </StackLayout>
+
+        <!-- Sağ Alan -->
+        <StackLayout Grid.Column="1" Orientation="Vertical" Padding="20" BackgroundColor="FloralWhite">
+            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto, *">
+                <!-- Üst Satır -->
+                <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0">
+                    <StackLayout>
+                        <Label Text="Son İşlemler" FontSize="20" TextColor="Black" HorizontalOptions="Center" />
+                        <!-- Son işlemler içeriği buraya eklenebilir -->
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1">
+                    <StackLayout>
+                        <Label Text="Son Satışlar" FontSize="20" TextColor="Black" HorizontalOptions="Center" />
+                        <ListView x:Name="SalesListView">
+                            <ListView.Header>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <Label Text="Ürün ID" TextColor="Black" WidthRequest="100" />
+                                        <Label Text="Ürün Adı" TextColor="Black" WidthRequest="200" />
+                                        <Label Text="Satış Fiyatı" TextColor="Black" WidthRequest="100" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </ListView.Header>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="10">
+                                            <Label Text="{Binding ProductId}" WidthRequest="100" TextColor="Black" />
+                                            <Label Text="{Binding ProductName}" WidthRequest="200" TextColor="Black"/>
+                                            <Label Text="{Binding SalePrice}" WidthRequest="100" TextColor="black"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+
+                <!-- En Çok Satanlar Grafik -->
+                <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="2">
+                    <StackLayout>
+                        <Label Text="En Çok Satanlar" FontSize="20" TextColor="Black" HorizontalOptions="Center" />
+                        <Grid>
+                            <shapes:Polygon Points="0,100 50,50 100,100 150,30 200,100" Fill="Orange" />
+                            <shapes:Polygon Points="0,100 50,150 100,100 150,170 200,100" Fill="Blue" />
+                            <shapes:Polygon Points="0,100 50,30 100,100 150,60 200,100" Fill="Green" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Hatırlatıcı -->
+                <Frame BackgroundColor="DarkBlue" Padding="10" CornerRadius="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2" Grid.ColumnSpan="2">
+                    <StackLayout>
+                        <Label Text="Hatırlatıcı" FontSize="20" TextColor="White" HorizontalOptions="Center" />
+                        <material:DatePickerField Title="Tarih Seçin" CornerRadius="25" x:Name="ReminderDate" />
+                        <material:TextField x:Name="ReminderNote" Title="Notunuzu buraya girin..." CornerRadius="25" />
+                        <Button Text="Hatırlatıcı Oluştur" Clicked="OnCreateReminderClicked" BackgroundColor="Green" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

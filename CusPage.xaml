@@ -1,0 +1,26 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- TC -->
+            <Label Text="TC Kimlik No:" FontSize="Medium" />
+            <Entry Placeholder="TC Kimlik No giriniz" x:Name="TcEntry" Keyboard="Numeric" />
+
+            <!-- Borç -->
+            <Label Text="Borç Durumu:" FontSize="Medium" />
+            <Entry Placeholder="Borç durumunu giriniz" x:Name="DebtEntry" Keyboard="Numeric" />
+
+            <!-- Ödeme Tarihi -->
+            <Label Text="Ödeme Tarihi:" FontSize="Medium" />
+            <DatePicker x:Name="PaymentDatePicker" />
+
+            <!-- Kaydet -->
+            <Button Text="Kaydet" Clicked="OnSaveButtonClicked" BackgroundColor="LightBlue" TextColor="Black" FontSize="Medium" />
+
+            <!-- Sonuç Mesajı -->
+            <Label x:Name="ResultLabel" TextColor="DarkRed" FontSize="Medium" IsVisible="False" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
