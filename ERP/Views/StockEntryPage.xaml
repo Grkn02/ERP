@@ -2,90 +2,97 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.StockEntryPage"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              Title="Depo Giriş">
-  
-    <StackLayout Padding="15">
+
+    <StackLayout Padding="15" BackgroundColor="FloralWhite">
 
         <Label Text="Ürün Girme" 
                FontSize="20" 
+               TextColor="Black"
                HorizontalOptions="Center" 
                Margin="0,0,0,10" />
 
         <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
               ColumnDefinitions="Auto,*">
 
-            <Label Text="Ürün Kodu:" 
-                   Grid.Row="0" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry1"  
-                   Text="{Binding ProductCodef}" 
-                   Grid.Row="0" 
-                   Grid.Column="1" />
 
-            <Label Text="Ürün Kategorisi:" 
-                   Grid.Row="1" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry2" 
-                   Text="{Binding Namef}" 
-                   Grid.Row="1" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry1"  
+        Text="{Binding ProductCodef}"
+        BorderColor="DarkBlue"
+        Title="Ürün Kodu"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="0" 
+        Grid.Column="1" />
 
-            <Label Text="Ürün Adı:" 
-                   Grid.Row="2" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry3" 
-                   Text="{Binding Categoryf}" 
-                   Grid.Row="2" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry2" 
+        Text="{Binding Namef}" 
+        BorderColor="DarkBlue"
+        Title="Ürün Kategorisi"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="1" 
+        Grid.Column="1" />
 
-            <Label Text="Miktar (Adet):" 
-                   Grid.Row="3" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry4" 
-                   Text="{Binding Quantityf}" 
-                   Grid.Row="3" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry3" 
+        Text="{Binding Categoryf}" 
+        BorderColor="DarkBlue"
+        Title="Ürün Adı"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="2" 
+        Grid.Column="1" />
 
-            <Label Text="Birim Alış Fiyatı:" 
-                   Grid.Row="4" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry5" 
-                   Text="{Binding Costf}" 
-                   Grid.Row="4" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry4" 
+        Text="{Binding Quantityf}" 
+        BorderColor="DarkBlue"
+        Title="Miktar (Adet)"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="3" 
+        Grid.Column="1" />
 
-            <Label Text="Satıcı:" 
-                   Grid.Row="5" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry6" 
-                   Text="{Binding Supplierf}" 
-                   Grid.Row="5" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry5" 
+        Text="{Binding Costf}" 
+        BorderColor="DarkBlue"
+        Title="Birim Alış Fiyatı"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="4" 
+        Grid.Column="1" />
 
-            <Label Text="Açıklama (Opsiyonel):" 
-                   Grid.Row="6" 
-                   Grid.Column="0" 
-                   VerticalTextAlignment="Center" />
-            <Entry x:Name="Entry7" 
-                   Text="{Binding Descriptionf}" 
-                   Grid.Row="6" 
-                   Grid.Column="1" />
+            <material:TextField x:Name="Entry6" 
+        Text="{Binding Supplierf}" 
+        BorderColor="DarkBlue"
+        Title="Satıcı"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="5" 
+        Grid.Column="1" />
+
+            <material:TextField x:Name="Entry7" 
+        Text="{Binding Descriptionf}" 
+        BorderColor="DarkBlue"
+        Title="Açıklama (Opsiyonel)"
+        TitleColor="DarkBlue"
+        TextColor="Black"
+        Grid.Row="6" 
+        Grid.Column="1" />
 
         </Grid>
 
         <Button Text="Gönder" 
                 Command="{Binding ButtonClickCommand}" 
+                BackgroundColor="DarkBlue"
                 HorizontalOptions="Center" 
                 VerticalOptions="End" 
                 Margin="0,20,0,0" />
 
+        <Label Text="{Binding Info}" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,5" BackgroundColor="Transparent" TextColor="Black" />
+
+
     </StackLayout>
-    
-    
+
+
 </ContentPage>

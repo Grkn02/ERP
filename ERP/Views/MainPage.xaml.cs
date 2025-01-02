@@ -6,10 +6,6 @@ namespace ERP.Views;
 [QueryProperty(nameof(Surname), "Surname")]
 public partial class MainPage : ContentPage
 {
-   
-
-
-
     public MainPage(MainViewModel viewModel)
     {
         InitializeComponent();

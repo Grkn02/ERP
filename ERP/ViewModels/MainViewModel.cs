@@ -46,7 +46,7 @@ namespace ERP.ViewModels
             }
         }
 
-        public string WelcomeMessage => $"Hoşgeldiniz {Name} {Surname}";
+        public string WelcomeMessage => $"Hoşgeldin {Name} {Surname}";
 
         public MainViewModel() 
         {

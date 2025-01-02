@@ -23,6 +23,7 @@ namespace ERP.ViewModels
         private decimal _cost;
         private string _suplier = string.Empty; 
         private string _description = string.Empty;
+        private string _info;
 
         //ilgili viewin entry kısmındaki bind edilecek propertyler
         public string ProductCodef
@@ -59,6 +60,11 @@ namespace ERP.ViewModels
         {
             get => _description;
             set => SetProperty(ref _description, value);
+        }
+        public string Info
+        {
+            get => _info;
+            set => SetProperty(ref _info, value); // SetProperty metodu ile property değiştiğinde bildirim yapılır.onpropertychanged metodu otomatik çağrılır.
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -112,7 +118,7 @@ namespace ERP.ViewModels
             if (product == null)
             {
                 // Ürün bulunamadıysa bir hata fırlatabilirsiniz ya da uygun bir işlem yapabilirsiniz.
-                throw new Exception("Product not found.");
+                //throw new Exception("Product not found.");
             }
             else
             {
@@ -140,7 +146,10 @@ namespace ERP.ViewModels
             if (product == null)
             {
                 // Ürün bulunamadıysa bir hata fırlattık.
-                throw new Exception("Product not found.");
+                //throw new Exception("Product not found.");
+                Info = "Hata: Var olmayan ürün kodu girdiniz!";
+
+
             }
             else
             {

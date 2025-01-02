@@ -2,41 +2,42 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.StockPage"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              Title="Depo"
              xmlns:local="clr-namespace:ERP.ViewModels">
 
-    
+
     <!-- ilerde form ksımın başka bir butona butona tıklayınca dinamik olarak açılıp kapanmsı için Grid in ColumnDefinitions binding et viewmodelden  -->
 
-    <Grid Padding="10" RowDefinitions="*,Auto" ColumnDefinitions="3*,2*" ColumnSpacing="25">
+    <Grid Padding="10" RowDefinitions="*,Auto" ColumnDefinitions="3*,2*" ColumnSpacing="25" BackgroundColor="FloralWhite" >
         <!-- Sol taraf: Tablo -->
 
 
         <StackLayout>
-            <Label Text="Güncel Stok" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10"/>
+            <Label Text="Güncel Stok" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10" TextColor="Black"/>
 
             <ListView x:Name="TableListView" ItemsSource="{Binding Products}"  HasUnevenRows="True">
                 <ListView.Header>
                     <Grid ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*" BackgroundColor="#eeeeee" Padding="5">
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5"  BackgroundColor="DarkBlue" >
                             <Label Text="Ürün Kodu" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="1">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="1" BackgroundColor="DarkBlue" >
                             <Label Text="Ürün Adı" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="2">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="2" BackgroundColor="DarkBlue" >
                             <Label Text="Ürün Kategorisi" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="3">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="3"  BackgroundColor="DarkBlue"  >
                             <Label Text="Mevcut Stok(Adet)" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="4">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="4"  BackgroundColor="DarkBlue" >
                             <Label Text="Ort. Birim Maliyeti" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="5">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="5"  BackgroundColor="DarkBlue" >
                             <Label Text="Birim Satış Fiyatı" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="6">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="6"  BackgroundColor="DarkBlue" >
                             <Label Text="Son Güncellenme Tarihi" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
                     </Grid>
@@ -45,26 +46,26 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*" Padding="5">
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5">
-                                    <Label Text="{Binding ProductCode}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" BackgroundColor="AliceBlue" >
+                                    <Label Text="{Binding ProductCode}" HorizontalTextAlignment="Center" TextColor="Black"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="1">
-                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="1" BackgroundColor="AliceBlue" >
+                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" TextColor="Black" />
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="2">
-                                    <Label Text="{Binding Category}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="2" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding Category}" HorizontalTextAlignment="Center" TextColor="Black"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="3">
-                                    <Label Text="{Binding CurrentStock}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="3" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding CurrentStock}" HorizontalTextAlignment="Center" TextColor="Black" />
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="4">
-                                    <Label Text="{Binding Cost}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="4" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding Cost}" HorizontalTextAlignment="Center" TextColor="Black" />
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="5">
-                                    <Label Text="{Binding Price}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="5" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding Price}" HorizontalTextAlignment="Center" TextColor="Black" />
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="6">
-                                    <Label Text="{Binding LastUpdated}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="6" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding LastUpdated}" HorizontalTextAlignment="Center" TextColor="Black"/>
                                 </Frame>
                             </Grid>
                         </ViewCell>
@@ -77,34 +78,27 @@
         <!--Sağ taraf: Form-->
         <StackLayout Grid.Column="1" Spacing="15">
 
-            <Label Text="Ürün Çıkarma" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10"/>
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
-                <Label Text="Ürün Kodu:" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry1"  Text="{Binding ProductCodef}" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Ürün Çıkarma" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10" BackgroundColor="Transparent" TextColor="Black" />
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*">
+                <material:TextField x:Name="Entry1" Text="{Binding ProductCodef}" Title="Ürün Kodu" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="0" Grid.Column="0" SelectionHighlightColor="Black"  />
 
-                <Label Text="Ürün Kategorisi:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry2" Text="{Binding Namef}" Grid.Row="1" Grid.Column="1"/>
+                <material:TextField x:Name="Entry2" Text="{Binding Namef}" Title="Ürün Kategorisi" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="1" Grid.Column="0"/>
 
-                <Label Text="Ürün Adı:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry3" Text="{Binding Categoryf}" Grid.Row="2" Grid.Column="1"/>
+                <material:TextField x:Name="Entry3" Text="{Binding Categoryf}" Title="Ürün Adı" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="2" Grid.Column="0"/>
 
-                <Label Text="Miktar(Adet):" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry4" Text="{Binding Quantityf}" Grid.Row="3" Grid.Column="1"/>
+                <material:TextField x:Name="Entry4" Text="{Binding Quantityf}" Title="Miktar(Adet)" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="3" Grid.Column="0"/>
 
-                <Label Text="Birim Satış Fiyatı:" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry5" Text="{Binding Pricef}" Grid.Row="4" Grid.Column="1"/>
+                <material:TextField x:Name="Entry5" Text="{Binding Pricef}" Title="Birim Satış Fiyatı" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="4" Grid.Column="0"/>
 
-                <Label Text="Müşteri:" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry6" Text="{Binding Customerf}" Grid.Row="5" Grid.Column="1"/>
+                <material:TextField x:Name="Entry6" Text="{Binding Customerf}" Title="Müşteri" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="DarkBlue" Grid.Row="5" Grid.Column="0"/>
 
-                <Label Text="Açıklama(Opsiyonel):" Grid.Row="6" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry x:Name="Entry7" Text="{Binding Descriptionf}" Grid.Row="6" Grid.Column="1"/>
-
+                <material:TextField x:Name="Entry7" Text="{Binding Descriptionf}" Title="Açıklama (Opsiyonel)" TitleColor="DarkBlue" BorderColor="DarkBlue" TextColor="Black" Grid.Row="6" Grid.Column="0"/>
             </Grid>
-            <Button Text="Gönder" Command="{Binding ButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,1,0,0"/>
+            <Button Text="Gönder" Command="{Binding ButtonClickCommand}" HorizontalOptions="Center" VerticalOptions="End" Margin="0,1,0,0" BackgroundColor="DarkBlue"/>
+            <Label Text="{Binding Info}" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,5" BackgroundColor="Transparent" TextColor="Black" />
         </StackLayout>
     </Grid>
 
-             
+
 
 </ContentPage>

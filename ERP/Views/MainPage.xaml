@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.MainPage"
              Title="Ana Sayfa"
-             xmlns:local="clr-namespace:ERP.ViewModels">
+             xmlns:local="clr-namespace:ERP.ViewModels"
+             x:DataType="local:MainViewModel">
 
-
-
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
 
     <Grid>
         <!-- Grid Yapısı -->
@@ -19,52 +21,78 @@
 
         <!-- Sol Navigasyon Menüsü -->
         <StackLayout Grid.Column="0" 
-                     BackgroundColor="#2C3E50" 
+                     BackgroundColor="DarkBlue" 
                      Padding="10">
             <!-- Logo veya Başlık -->
-            <Label Text="Menü" 
-                   FontSize="20" 
-                   HorizontalOptions="Center" 
-                   TextColor="White" 
-                   Margin="0,10,0,20" />
-
+            <Label Text="
+  ★  E R Ü S O F T  ★
+─────────────────────
+         " TextColor="White" HeightRequest="50" BackgroundColor="Transparent" HorizontalOptions="Center" FontSize="16" />
             <!-- Navigasyon Butonları -->
             <Button Text="Depo" 
-                    FontSize="16"
-                    CornerRadius="10"
-                    BackgroundColor="#34495E"
+                    FontSize="14"
+                    WidthRequest="175"
+                    CornerRadius="25"
+                    ImageSource="warehouse.png"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start"
                     TextColor="White"
                     HeightRequest="50"
                     Margin="0,5"
                     Command="{Binding ButtonClickCommand}" CommandParameter="StockPage"/>
 
             <Button Text="Depo Giriş" 
-                    FontSize="16"
-                    CornerRadius="10"
-                    BackgroundColor="#34495E"
+                    ImageSource="fifo.png"
+                    FontSize="14"
+                    CornerRadius="25"
+                    WidthRequest="175"
+                    BackgroundColor="Transparent"
                     TextColor="White"
+                    HorizontalOptions="Start"
                     HeightRequest="50"
                     Margin="0,5"
                     Command="{Binding ButtonClickCommand}" CommandParameter="StockEntryPage"/>
 
-            <Button Text="Depo İşlem Geçmişi" 
-                    FontSize="16"
-                    CornerRadius="10"
-                    BackgroundColor="#34495E"
+            <Button Text="İşlem Geçmişi"
+                    ImageSource="pasticon.png"
+                    FontSize="14"
+                    CornerRadius="25"
+                    HorizontalOptions="Start"
+                    BackgroundColor="Transparent"
                     TextColor="White"
+                    WidthRequest="200"
                     HeightRequest="50"
+                    Padding="0.5"
                     Margin="0,5"
                     Command="{Binding ButtonClickCommand}" CommandParameter="TransactionHistoryPage"/>
 
-            
-            <Button Text="Çıkış" 
-                    FontSize="16"
-                    CornerRadius="10"
-                    BackgroundColor="#E74C3C"
+            <Button Text="Ürün Yönetimi"
+                     ImageSource="manage.png"
+                     FontSize="14"
+                     CornerRadius="25"
+                     HorizontalOptions="Start"
+                     BackgroundColor="Transparent"
+                     TextColor="White"
+                     WidthRequest="200"
+                     HeightRequest="50"
+                     Padding="0.5"
+                     Margin="0,5"
+                     Command="{Binding ButtonClickCommand}" CommandParameter="ManageProductPage"/>
+
+
+
+            <Button Text="Çıkış"
+                    ImageSource="exit.png"
+                    HorizontalOptions="Start"
+                    FontSize="14"
+                    WidthRequest="175"
+                    CornerRadius="25"
+                    BackgroundColor="Transparent"
                     TextColor="White"
                     HeightRequest="50"
                     Margin="0,5"
-                    Command="{Binding ButtonClickCommand}" CommandParameter="LoginPage"/> <!--çıkış amaçlı menü butonu--> 
+                    Command="{Binding ButtonClickCommand}" CommandParameter="LoginPage"/>
+            <!--çıkış amaçlı menü butonu-->
 
         </StackLayout>
 

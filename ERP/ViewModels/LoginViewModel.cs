@@ -97,9 +97,9 @@ namespace ERP.ViewModels
 
 
                 }
-                else Info = "Başarısız Giriş :(";
+                else Info = "Hata: Yanlış Kullanıcı adı veya şifre";
             }
-            else Info = "Başarısız Giriş :(";
+            else Info = "Hata: Yanlış Kullanıcı adı veya şifre";
 
         }
 

@@ -2,51 +2,114 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.RegisterPage"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              Title="Kayıt Sayfası">
 
-    <VerticalStackLayout Padding="30,0" Spacing="25">
-        <Image
-        Source="dotnet_bot.png"
-        HeightRequest="185"
-        Aspect="AspectFit" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Entry 
-        Placeholder="Username"    
-        Text="{Binding UserName}"
-        MaximumWidthRequest="300" />
+        <!-- Sol panel: Logo -->
+        <StackLayout
+            Grid.Column="0"
+            BackgroundColor="#3498db"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Image
+                Source="logo.png"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+        </StackLayout>
 
-        <Entry 
-        Placeholder="Password" 
-        Text="{Binding Password}"
-        MaximumWidthRequest="300" />
+        <!-- Sağ panel: Kayıt formu -->
+        <StackLayout
+            Grid.Column="1"
+            Padding="20"
+            BackgroundColor="FloralWhite"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
 
-        <Entry 
-        Placeholder="Email" 
-        Text="{Binding Email}"
-        MaximumWidthRequest="300" />
+            <!-- Başlık -->
+            <Frame
+                CornerRadius="15"
+                BackgroundColor="DarkBlue"
+                Padding="20"
+                Margin="0,0,0,20">
+                <Label
+                    Text="Kayıt Sayfası"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="White" />
+            </Frame>
 
-        <Entry 
-        Placeholder="Name" 
-        Text="{Binding Name}"
-        MaximumWidthRequest="300" />
+            <!-- Form alanları -->
+            <material:TextField
+                Title="Username"
+                TitleColor="DarkBlue"
+                BorderColor="DarkBlue"
+                TextColor="DarkBlue"
+                CornerRadius="25"
+                Text="{Binding UserName}"
+                HeightRequest="75"
+                Margin="0,10,0,0" />
 
-        <Entry 
-        Placeholder="Surname" 
-        Text="{Binding Surname}"
-        MaximumWidthRequest="300" />
+            <material:TextField
+                Title="Password"
+                TitleColor="DarkBlue"
+                BorderColor="DarkBlue"
+                TextColor="DarkBlue"
+                CornerRadius="25"
+                Text="{Binding Password}"
+                HeightRequest="75"
+                IsPassword="True" />
 
-        <Label
-        Text="{Binding Info}"
-        x:Name="info"
-        FontSize="18"
-        HorizontalOptions="Center" />
+            <material:TextField
+                Title="Email"
+                TitleColor="DarkBlue"
+                BorderColor="DarkBlue"
+                TextColor="DarkBlue"
+                CornerRadius="25"
+                Text="{Binding Email}"
+                HeightRequest="75" />
 
-        <Button
-        Text="Kayıt Ol"
-        Command="{Binding ButtonClickCommand}"
-        HorizontalOptions="Center"
-        MinimumWidthRequest="100" />
-    </VerticalStackLayout>
+            <material:TextField
+                Title="Name"
+                TitleColor="DarkBlue"
+                BorderColor="DarkBlue"
+                TextColor="DarkBlue"
+                CornerRadius="25"
+                Text="{Binding Name}"
+                HeightRequest="75" />
 
+            <material:TextField
+                Title="Surname"
+                TitleColor="DarkBlue"
+                BorderColor="DarkBlue"
+                TextColor="DarkBlue"
+                CornerRadius="25"
+                Text="{Binding Surname}"
+                HeightRequest="75" />
 
+            <!-- Bilgi mesajı -->
+            <Label
+                Text="{Binding Info}"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <!-- Kayıt butonu -->
+            <Button
+                Text="Kayıt Ol"
+                CornerRadius="25"
+                BackgroundColor="DarkBlue"
+                Command="{Binding ButtonClickCommand}"
+                TextColor="White"
+                HorizontalOptions="Center"
+                MinimumWidthRequest="100"
+                HeightRequest="50" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

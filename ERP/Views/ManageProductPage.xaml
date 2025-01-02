@@ -2,41 +2,88 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ERP.Views.ManageProductPage"
-             Title="ManageProductPage">
-    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
-            <!-- Forum 1 -->
-            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
-                <Entry Placeholder="Ürün Kodu" />
-                <Entry Placeholder="Ürün Adı" />
-                <Entry Placeholder="Kategori" />
-                <Entry Placeholder="Mevcut Stok" />
-                <Entry Placeholder="Birim Maliyet" />
-                <Entry Placeholder="Birim Fiyat" />
-                <Button Text="Ürün Ekle" />
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             Title="Ürün Veritabanı Yönetim sayfası"
+             BackgroundColor="FloralWhite">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Forum 1 -->
+        <Frame
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderColor="DarkBlue"
+            BackgroundColor="FloralWhite"
+            CornerRadius="10"
+            Padding="10"
+            HasShadow="True">
+            <StackLayout Spacing="10">
+                <material:TextField Title="Ürün Kodu" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Ürün Adı" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Kategori" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Mevcut Stok" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Birim Maliyet" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Birim Fiyat" TitleColor="DarkBlue" TextColor="Black" />
+                <Button Text="Ürün Kodu Ekle" BackgroundColor="DarkGreen" />
             </StackLayout>
+        </Frame>
 
-            <!-- Forum 2 -->
-            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
-                <Entry Placeholder="Güncellenecek Ürünün Kodu" />
-                <Entry Placeholder="Ürün Adı" />
-                <Entry Placeholder="Kategori" />
-                <Entry Placeholder="Mevcut Stok" />
-                <Entry Placeholder="Birim Maliyet" />
-                <Entry Placeholder="Birim Fiyat" />
-                <Button Text="Ürün Güncelle" />
+        <!-- Forum 2 -->
+        <Frame
+            Grid.Row="0"
+            Grid.Column="1"
+            BorderColor="DarkBlue"
+            BackgroundColor="FloralWhite"
+            CornerRadius="10"
+            Padding="10"
+            HasShadow="True">
+            <StackLayout Spacing="10">
+                <material:TextField Title="Güncellenecek Ürünün Kodu" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Ürün Adı" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Kategori" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Mevcut Stok" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Birim Maliyet" TitleColor="DarkBlue" TextColor="Black" />
+                <material:TextField Title="Birim Fiyat" TitleColor="DarkBlue" TextColor="Black" />
+                <Button Text="Ürün Güncelle" BackgroundColor="Brown"/>
             </StackLayout>
+        </Frame>
 
-            <!-- Forum 3 -->
-            <StackLayout Padding="10" Spacing="10" WidthRequest="250">
-                <Entry Placeholder="Silinecek Ürün Kodu" />
-                <Button Text="Ürün Sil" />
-            </StackLayout>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+        <!-- Forum 3 -->
+        <Frame
+            Grid.Row="0"
+            Grid.Column="2"
+            BorderColor="DarkBlue"
+            BackgroundColor="FloralWhite"
+            CornerRadius="10"
+            Padding="10"
+            HasShadow="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
+                <material:TextField 
+                    Title="Silinecek Ürün Kodu" 
+                    TitleColor="DarkBlue" 
+                    TextColor="Black" 
+                    Grid.Row="0" />
 
-
-
-
+                <Button 
+                    Text="Ürün Sil" 
+                    Grid.Row="1" 
+                    BackgroundColor="DarkRed"
+                    VerticalOptions="EndAndExpand" />
+            </Grid>
+        </Frame>
+    </Grid>
 </ContentPage>
