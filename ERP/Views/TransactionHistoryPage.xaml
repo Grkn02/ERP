@@ -6,45 +6,48 @@
 			 xmlns:local="clr-namespace:ERP.ViewModels">
 
 
-    <Grid Padding="10">
+    <Grid Padding="10" BackgroundColor="FloralWhite" >
         <!-- Yenile Butonu Sağ Üst Köşede -->
         <Button Text="Yenile"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                BackgroundColor="DarkBlue"
+                TextColor="AliceBlue"
+                WidthRequest="300"
                 Padding="10"/>
 
         <!-- Tablonun bulunduğu alan -->
         <StackLayout VerticalOptions="FillAndExpand">
-            <Label Text="İşlem Geçmişi Listesi" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,10"/>
+            <Label Text="İşlem Geçmişi Listesi" FontSize="20" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,10"/>
 
             <ListView x:Name="TableListView" ItemsSource="{Binding TransactionHistories}"  HasUnevenRows="True">
                 <ListView.Header>
 					<Grid ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*,1*,1*" BackgroundColor="#eeeeee" Padding="5">
-						<Frame BorderColor="Black" CornerRadius="0" Padding="5">
+						<Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" BackgroundColor="DarkBlue">
                             <Label Text="İşlem Tarihi" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="1">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="1" BackgroundColor="DarkBlue">
                             <Label Text="İşlem Türü" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="2">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="2" BackgroundColor="DarkBlue">
                             <Label Text="Ürün Kategorisi" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="3">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="3" BackgroundColor="DarkBlue">
                             <Label Text="Ürün Kodu" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="4">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="4" BackgroundColor="DarkBlue">
                             <Label Text="Ürün Adı" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="5">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="5" BackgroundColor="DarkBlue">
                             <Label Text="Alım/Satım Miktarı(Adet)" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-                        <Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="6">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="6" BackgroundColor="DarkBlue">
                             <Label Text="Alım/Satım Bedeli(TL)" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                         </Frame>
-						<Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="7">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="7" BackgroundColor="DarkBlue">
 							<Label Text="İşlem Ortağı(Müşteri/Aracı)" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 						</Frame>
-						<Frame BorderColor="Black" CornerRadius="0" Padding="5" Grid.Column="8">
+                        <Frame BorderColor="DarkBlue" CornerRadius="0" Padding="5" Grid.Column="8" BackgroundColor="DarkBlue">
 							<Label Text="Açıklama" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 						</Frame>
 					</Grid>
@@ -53,32 +56,32 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*,1*,1*" Padding="5">
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5">
-                                    <Label Text="{Binding TransactionDate}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding TransactionDate}" HorizontalTextAlignment="Center" TextColor="Black"  BackgroundColor="AliceBlue"/>
                                 </Frame>
-								<Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="1">
-                                    <Label Text="{Binding TransactionType}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="1" BackgroundColor="AliceBlue" >
+                                    <Label Text="{Binding TransactionType}" HorizontalTextAlignment="Center"  TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="2">
-                                    <Label Text="{Binding Category}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="2" BackgroundColor="AliceBlue" >
+                                    <Label Text="{Binding Category}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="3">
-                                    <Label Text="{Binding ProductCode}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="3" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding ProductCode}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue" />
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="4">
-                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="4" BackgroundColor="AliceBlue" >
+                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="5">
-                                    <Label Text="{Binding Quantity}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="5" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding Quantity}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="6">
-                                    <Label Text="{Binding TransactionPrice}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="6" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding TransactionPrice}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="7">
-                                    <Label Text="{Binding PartyName}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="7" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding PartyName}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
-                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="8">
-                                    <Label Text="{Binding Description}" HorizontalTextAlignment="Center"/>
+                                <Frame BorderColor="Gray" CornerRadius="0" Padding="5" Grid.Column="8" BackgroundColor="AliceBlue">
+                                    <Label Text="{Binding Description}" HorizontalTextAlignment="Center" TextColor="Black" BackgroundColor="AliceBlue"/>
                                 </Frame>
                             </Grid>
                         </ViewCell>
